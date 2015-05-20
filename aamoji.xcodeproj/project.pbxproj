@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F36E7821B0C606B001D0A79 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F36E7791B0C6048001D0A79 /* SQLite.framework */; };
 		5F963FCD1B0C09F900F5B3BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F963FCC1B0C09F900F5B3BF /* AppDelegate.swift */; };
 		5F963FCF1B0C09F900F5B3BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F963FCE1B0C09F900F5B3BF /* Images.xcassets */; };
 		5F963FD21B0C09F900F5B3BF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F963FD01B0C09F900F5B3BF /* MainMenu.xib */; };
@@ -20,6 +21,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5F36E7781B0C6048001D0A79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F36E7701B0C6048001D0A79 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC3773F319C8CBB3004FCF85;
+			remoteInfo = SQLite;
+		};
+		5F36E77A1B0C6048001D0A79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F36E7701B0C6048001D0A79 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC3773FE19C8CBB3004FCF85;
+			remoteInfo = "SQLite Tests";
+		};
+		5F36E77C1B0C6048001D0A79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F36E7701B0C6048001D0A79 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DCC6B3801A9191C300734B78;
+			remoteInfo = SQLiteCipher;
+		};
+		5F36E77E1B0C6048001D0A79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F36E7701B0C6048001D0A79 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DCC6B3921A9191D100734B78;
+			remoteInfo = "SQLiteCipher Tests";
+		};
+		5F36E7801B0C6054001D0A79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F36E7701B0C6048001D0A79 /* SQLite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DC3773F219C8CBB3004FCF85;
+			remoteInfo = SQLite;
+		};
 		5F963FD81B0C09F900F5B3BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5F963FBF1B0C09F800F5B3BF /* Project object */;
@@ -30,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F36E7701B0C6048001D0A79 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "aamoji/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		5F963FC71B0C09F900F5B3BF /* aamoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aamoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F963FCB1B0C09F900F5B3BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F963FCC1B0C09F900F5B3BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F36E7821B0C606B001D0A79 /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +102,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F36E7711B0C6048001D0A79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F36E7791B0C6048001D0A79 /* SQLite.framework */,
+				5F36E77B1B0C6048001D0A79 /* SQLite Tests.xctest */,
+				5F36E77D1B0C6048001D0A79 /* SQLite.framework */,
+				5F36E77F1B0C6048001D0A79 /* SQLiteCipher Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5F963FBE1B0C09F800F5B3BF = {
 			isa = PBXGroup;
 			children = (
 				5F963FC91B0C09F900F5B3BF /* aamoji */,
 				5F963FDA1B0C09F900F5B3BF /* aamojiTests */,
 				5F963FC81B0C09F900F5B3BF /* Products */,
+				5F36E7701B0C6048001D0A79 /* SQLite.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,6 +188,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5F36E7811B0C6054001D0A79 /* PBXTargetDependency */,
 			);
 			name = aamoji;
 			productName = aamoji;
@@ -191,6 +242,12 @@
 			mainGroup = 5F963FBE1B0C09F800F5B3BF;
 			productRefGroup = 5F963FC81B0C09F900F5B3BF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5F36E7711B0C6048001D0A79 /* Products */;
+					ProjectRef = 5F36E7701B0C6048001D0A79 /* SQLite.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5F963FC61B0C09F900F5B3BF /* aamoji */,
@@ -198,6 +255,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5F36E7791B0C6048001D0A79 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 5F36E7781B0C6048001D0A79 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F36E77B1B0C6048001D0A79 /* SQLite Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLite Tests.xctest";
+			remoteRef = 5F36E77A1B0C6048001D0A79 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F36E77D1B0C6048001D0A79 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 5F36E77C1B0C6048001D0A79 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5F36E77F1B0C6048001D0A79 /* SQLiteCipher Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteCipher Tests.xctest";
+			remoteRef = 5F36E77E1B0C6048001D0A79 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5F963FC51B0C09F900F5B3BF /* Resources */ = {
@@ -244,6 +332,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5F36E7811B0C6054001D0A79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SQLite;
+			targetProxy = 5F36E7801B0C6054001D0A79 /* PBXContainerItemProxy */;
+		};
 		5F963FD91B0C09F900F5B3BF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5F963FC61B0C09F900F5B3BF /* aamoji */;
@@ -420,6 +513,7 @@
 				5F963FE31B0C09F900F5B3BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F963FE41B0C09F900F5B3BF /* Build configuration list for PBXNativeTarget "aamojiTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +522,7 @@
 				5F963FE61B0C09F900F5B3BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

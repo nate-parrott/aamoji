@@ -15,8 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
 
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        println("\(inserter._pathForDatabase())")
+    func applicationWillFinishLaunching(aNotification: NSNotification) {
         window.titleVisibility = .Hidden
         window.titlebarAppearsTransparent = true
         _updateUI()

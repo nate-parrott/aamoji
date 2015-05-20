@@ -7,12 +7,12 @@
 //
 
 import Cocoa
+import SQLite
 
 let ReplacementsKey = "NSUserDictionaryReplacementItems"
 let ReplacementOnKey = "on"
 let ReplacementShortcutKey = "replace"
 let ReplacementReplaceWithKey = "with"
-let ReplacementAamojiMarker = "_aamoji"
 
 class AamojiInserter: NSObject {
     
@@ -52,6 +52,16 @@ class AamojiInserter: NSObject {
     
     private func _insertReplacements() {
         // make the change in sqlite:
+        let db = Database(_pathForDatabase())
+        var pk = db.scalar("SELECT max(Z_PK) FROM 'ZUSERDICTIONARYENTRY'") as? Int ?? 0
+        let timestamp = Int64(NSDate().timeIntervalSince1970)
+        for entry in aamojiEntries() {
+            // key, timestamp, with, replace
+            let replace = entry[ReplacementShortcutKey] as! String
+            let with = entry[ReplacementReplaceWithKey] as! String
+            db.run("INSERT INTO 'ZUSERDICTIONARYENTRY' VALUES(?,1,1,0,0,0,0,?,NULL,NULL,NULL,NULL,NULL,?,?,NULL)", [pk, timestamp, with, replace])
+            pk++
+        }
         
         // make the change in nsuserdefaults:
         let existingReplacementEntries = _defaults.arrayForKey(ReplacementsKey) as! [[NSObject: NSObject]]
@@ -60,6 +70,11 @@ class AamojiInserter: NSObject {
     
     private func _deleteReplacements() {
         // make the change in sqlite:
+        let db = Database(_pathForDatabase())
+        for entry in aamojiEntries() {
+            let shortcut = entry[ReplacementShortcutKey] as! String
+            db.run("DELETE FROM 'ZUSERDICTIONARYENTRY' WHERE ZSHORTCUT = ?", [shortcut])
+        }
         
         // make the change in nsuserdefaults:
         let existingReplacementEntries = _defaults.arrayForKey(ReplacementsKey) as! [[NSObject: NSObject]]
@@ -67,13 +82,22 @@ class AamojiInserter: NSObject {
         _setReplacementsInUserDefaults(withoutAamojiEntries)
     }
     
-    func _pathForDatabase() -> String {
+    private func _pathForDatabase() -> String {
         let library = NSSearchPathForDirectoriesInDomains(.LibraryDirectory, .UserDomainMask, true).first as! String
         let container1 = library.stringByAppendingPathComponent("Dictionaries/CoreDataUbiquitySupport")
         let contents = NSFileManager.defaultManager().contentsOfDirectoryAtPath(container1, error: nil) as! [String]
         let userName = NSUserName()
         let matchingDirname = contents.filter({ $0.startsWith(userName) }).first!
-        let path = container1.stringByAppendingPathComponent(matchingDirname).stringByAppendingPathComponent("UserDictionary/local/store/UserDictionary.db")
+        let container2 = container1.stringByAppendingPathComponent(matchingDirname).stringByAppendingPathComponent("UserDictionary")
+        // find the active icloud directory first, then fall back to local:
+        var subdir = "local"
+        for child in NSFileManager.defaultManager().contentsOfDirectoryAtPath(container2, error: nil) as! [String] {
+            let containerDir = container2.stringByAppendingPathComponent(child).stringByAppendingPathComponent("container")
+            if NSFileManager.defaultManager().fileExistsAtPath(containerDir) {
+                subdir = child
+            }
+        }
+        let path = container2.stringByAppendingPathComponent(subdir).stringByAppendingPathComponent("store/UserDictionary.db")
         return path
     }
     
@@ -113,7 +137,7 @@ class AamojiInserter: NSObject {
         let entries = Array(emojiByShortcut.keys).map() {
             (shortcut) -> [NSObject: NSObject] in
             let emoji = emojiByShortcut[shortcut]!
-            return [ReplacementOnKey: 1, ReplacementShortcutKey: "aa" + shortcut, ReplacementReplaceWithKey: emoji, ReplacementAamojiMarker: true]
+            return [ReplacementOnKey: 1, ReplacementShortcutKey: "aa" + shortcut, ReplacementReplaceWithKey: emoji]
         }
         
         return entries

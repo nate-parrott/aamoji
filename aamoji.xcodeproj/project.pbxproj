@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F963FCD1B0C09F900F5B3BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F963FCC1B0C09F900F5B3BF /* AppDelegate.swift */; };
+		5F963FCF1B0C09F900F5B3BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F963FCE1B0C09F900F5B3BF /* Images.xcassets */; };
+		5F963FD21B0C09F900F5B3BF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F963FD01B0C09F900F5B3BF /* MainMenu.xib */; };
+		5F963FDE1B0C09F900F5B3BF /* aamojiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F963FDD1B0C09F900F5B3BF /* aamojiTests.swift */; };
+		5F963FE81B0C0A1D00F5B3BF /* AamojiInserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F963FE71B0C0A1D00F5B3BF /* AamojiInserter.swift */; };
+		5F963FEA1B0C27C800F5B3BF /* emoji.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F963FE91B0C27C800F5B3BF /* emoji.json */; };
+		5F963FEC1B0C2BE500F5B3BF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F963FEB1B0C2BE500F5B3BF /* Utilities.swift */; };
+		5F963FEE1B0C330D00F5B3BF /* AamojiInserter+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F963FED1B0C330D00F5B3BF /* AamojiInserter+HTML.swift */; };
+		5F963FF01B0C332C00F5B3BF /* ShortcutListTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = 5F963FEF1B0C332B00F5B3BF /* ShortcutListTemplate.html */; };
+		5F963FF61B0C3A2C00F5B3BF /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F963FF51B0C3A2C00F5B3BF /* Icon.icns */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F963FD81B0C09F900F5B3BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F963FBF1B0C09F800F5B3BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F963FC61B0C09F900F5B3BF;
+			remoteInfo = aamoji;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5F963FC71B0C09F900F5B3BF /* aamoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aamoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F963FCB1B0C09F900F5B3BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F963FCC1B0C09F900F5B3BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5F963FCE1B0C09F900F5B3BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5F963FD11B0C09F900F5B3BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5F963FD71B0C09F900F5B3BF /* aamojiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aamojiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F963FDC1B0C09F900F5B3BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F963FDD1B0C09F900F5B3BF /* aamojiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aamojiTests.swift; sourceTree = "<group>"; };
+		5F963FE71B0C0A1D00F5B3BF /* AamojiInserter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AamojiInserter.swift; sourceTree = "<group>"; };
+		5F963FE91B0C27C800F5B3BF /* emoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emoji.json; sourceTree = "<group>"; };
+		5F963FEB1B0C2BE500F5B3BF /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5F963FED1B0C330D00F5B3BF /* AamojiInserter+HTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AamojiInserter+HTML.swift"; sourceTree = "<group>"; };
+		5F963FEF1B0C332B00F5B3BF /* ShortcutListTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ShortcutListTemplate.html; sourceTree = "<group>"; };
+		5F963FF51B0C3A2C00F5B3BF /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F963FC41B0C09F900F5B3BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F963FD41B0C09F900F5B3BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F963FBE1B0C09F800F5B3BF = {
+			isa = PBXGroup;
+			children = (
+				5F963FC91B0C09F900F5B3BF /* aamoji */,
+				5F963FDA1B0C09F900F5B3BF /* aamojiTests */,
+				5F963FC81B0C09F900F5B3BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F963FC81B0C09F900F5B3BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F963FC71B0C09F900F5B3BF /* aamoji.app */,
+				5F963FD71B0C09F900F5B3BF /* aamojiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F963FC91B0C09F900F5B3BF /* aamoji */ = {
+			isa = PBXGroup;
+			children = (
+				5F963FCC1B0C09F900F5B3BF /* AppDelegate.swift */,
+				5F963FE71B0C0A1D00F5B3BF /* AamojiInserter.swift */,
+				5F963FED1B0C330D00F5B3BF /* AamojiInserter+HTML.swift */,
+				5F963FEB1B0C2BE500F5B3BF /* Utilities.swift */,
+				5F963FF51B0C3A2C00F5B3BF /* Icon.icns */,
+				5F963FCE1B0C09F900F5B3BF /* Images.xcassets */,
+				5F963FE91B0C27C800F5B3BF /* emoji.json */,
+				5F963FEF1B0C332B00F5B3BF /* ShortcutListTemplate.html */,
+				5F963FD01B0C09F900F5B3BF /* MainMenu.xib */,
+				5F963FCA1B0C09F900F5B3BF /* Supporting Files */,
+			);
+			path = aamoji;
+			sourceTree = "<group>";
+		};
+		5F963FCA1B0C09F900F5B3BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F963FCB1B0C09F900F5B3BF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F963FDA1B0C09F900F5B3BF /* aamojiTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F963FDD1B0C09F900F5B3BF /* aamojiTests.swift */,
+				5F963FDB1B0C09F900F5B3BF /* Supporting Files */,
+			);
+			path = aamojiTests;
+			sourceTree = "<group>";
+		};
+		5F963FDB1B0C09F900F5B3BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F963FDC1B0C09F900F5B3BF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F963FC61B0C09F900F5B3BF /* aamoji */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F963FE11B0C09F900F5B3BF /* Build configuration list for PBXNativeTarget "aamoji" */;
+			buildPhases = (
+				5F963FC31B0C09F900F5B3BF /* Sources */,
+				5F963FC41B0C09F900F5B3BF /* Frameworks */,
+				5F963FC51B0C09F900F5B3BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = aamoji;
+			productName = aamoji;
+			productReference = 5F963FC71B0C09F900F5B3BF /* aamoji.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5F963FD61B0C09F900F5B3BF /* aamojiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F963FE41B0C09F900F5B3BF /* Build configuration list for PBXNativeTarget "aamojiTests" */;
+			buildPhases = (
+				5F963FD31B0C09F900F5B3BF /* Sources */,
+				5F963FD41B0C09F900F5B3BF /* Frameworks */,
+				5F963FD51B0C09F900F5B3BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F963FD91B0C09F900F5B3BF /* PBXTargetDependency */,
+			);
+			name = aamojiTests;
+			productName = aamojiTests;
+			productReference = 5F963FD71B0C09F900F5B3BF /* aamojiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F963FBF1B0C09F800F5B3BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Nate Parrott";
+				TargetAttributes = {
+					5F963FC61B0C09F900F5B3BF = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					5F963FD61B0C09F900F5B3BF = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 5F963FC61B0C09F900F5B3BF;
+					};
+				};
+			};
+			buildConfigurationList = 5F963FC21B0C09F800F5B3BF /* Build configuration list for PBXProject "aamoji" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F963FBE1B0C09F800F5B3BF;
+			productRefGroup = 5F963FC81B0C09F900F5B3BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F963FC61B0C09F900F5B3BF /* aamoji */,
+				5F963FD61B0C09F900F5B3BF /* aamojiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F963FC51B0C09F900F5B3BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F963FF01B0C332C00F5B3BF /* ShortcutListTemplate.html in Resources */,
+				5F963FCF1B0C09F900F5B3BF /* Images.xcassets in Resources */,
+				5F963FF61B0C3A2C00F5B3BF /* Icon.icns in Resources */,
+				5F963FEA1B0C27C800F5B3BF /* emoji.json in Resources */,
+				5F963FD21B0C09F900F5B3BF /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F963FD51B0C09F900F5B3BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F963FC31B0C09F900F5B3BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F963FEC1B0C2BE500F5B3BF /* Utilities.swift in Sources */,
+				5F963FEE1B0C330D00F5B3BF /* AamojiInserter+HTML.swift in Sources */,
+				5F963FE81B0C0A1D00F5B3BF /* AamojiInserter.swift in Sources */,
+				5F963FCD1B0C09F900F5B3BF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F963FD31B0C09F900F5B3BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F963FDE1B0C09F900F5B3BF /* aamojiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F963FD91B0C09F900F5B3BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F963FC61B0C09F900F5B3BF /* aamoji */;
+			targetProxy = 5F963FD81B0C09F900F5B3BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5F963FD01B0C09F900F5B3BF /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F963FD11B0C09F900F5B3BF /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F963FDF1B0C09F900F5B3BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5F963FE01B0C09F900F5B3BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5F963FE21B0C09F900F5B3BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = aamoji/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5F963FE31B0C09F900F5B3BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = aamoji/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5F963FE51B0C09F900F5B3BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = aamojiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aamoji.app/Contents/MacOS/aamoji";
+			};
+			name = Debug;
+		};
+		5F963FE61B0C09F900F5B3BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = aamojiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aamoji.app/Contents/MacOS/aamoji";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F963FC21B0C09F800F5B3BF /* Build configuration list for PBXProject "aamoji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F963FDF1B0C09F900F5B3BF /* Debug */,
+				5F963FE01B0C09F900F5B3BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F963FE11B0C09F900F5B3BF /* Build configuration list for PBXNativeTarget "aamoji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F963FE21B0C09F900F5B3BF /* Debug */,
+				5F963FE31B0C09F900F5B3BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5F963FE41B0C09F900F5B3BF /* Build configuration list for PBXNativeTarget "aamojiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F963FE51B0C09F900F5B3BF /* Debug */,
+				5F963FE61B0C09F900F5B3BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F963FBF1B0C09F800F5B3BF /* Project object */;
+}

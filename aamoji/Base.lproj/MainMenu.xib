@@ -677,7 +677,7 @@
         <window title="aamoji" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="479"/>
+            <rect key="contentRect" x="370" y="174" width="480" height="479"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <value key="minSize" type="size" width="480" height="479"/>
             <view key="contentView" id="EiT-Mj-1SZ">
@@ -713,7 +713,7 @@
                                                 <rect key="frame" x="0.0" y="-1" width="161" height="19"/>
                                                 <buttonCell key="cell" type="roundRect" title="Launch Notes to try it out" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Loc-bn-G8Y">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="controlContent"/>
+                                                    <font key="font" metaFont="cellTitle"/>
                                                 </buttonCell>
                                                 <connections>
                                                     <action selector="launchNotes:" target="Voe-Tx-rLC" id="IVo-IN-IVd"/>
@@ -723,7 +723,7 @@
                                                 <rect key="frame" x="169" y="-1" width="109" height="19"/>
                                                 <buttonCell key="cell" type="roundRect" title="List all shortcuts" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LZO-ki-fI7">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="controlContent"/>
+                                                    <font key="font" metaFont="cellTitle"/>
                                                 </buttonCell>
                                                 <connections>
                                                     <action selector="showShortcutsList:" target="Voe-Tx-rLC" id="yTQ-5a-S9E"/>
@@ -820,7 +820,9 @@
                 <subviews>
                     <webView translatesAutoresizingMaskIntoConstraints="NO" id="AQs-Gk-TGa">
                         <rect key="frame" x="0.0" y="0.0" width="276" height="378"/>
-                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO"/>
+                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO">
+                            <nil key="identifier"/>
+                        </webPreferences>
                     </webView>
                 </subviews>
                 <constraints>

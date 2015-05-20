@@ -34,4 +34,11 @@ extension String {
     func containsOnlyCharactersFromSet(set: NSCharacterSet) -> Bool {
         return componentsSeparatedByCharactersInSet(set.invertedSet).count == 1
     }
+    func startsWith(prefix: String) -> Bool {
+        if let range = self.rangeOfString(prefix) {
+            return range.startIndex == self.startIndex
+        } else {
+            return false
+        }
+    }
 }

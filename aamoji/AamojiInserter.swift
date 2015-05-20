@@ -19,7 +19,14 @@ class AamojiInserter: NSObject {
     var inserted: Bool? {
         get {
             if let replacements = _defaults.arrayForKey(ReplacementsKey) as? [[NSObject: NSObject]] {
-                return replacements.filter({ self._replacementBelongsToAamoji($0) }).count > 0
+                for replacement in replacements {
+                    if let shortcut = replacement[ReplacementShortcutKey] as? String {
+                        if _allShortcuts.contains(shortcut) {
+                            return true
+                        }
+                    }
+                }
+                return false
             } else {
                 return nil
             }
@@ -27,16 +34,60 @@ class AamojiInserter: NSObject {
         set(insertOpt) {
             if let insert = insertOpt {
                 if let replacements = _defaults.arrayForKey(ReplacementsKey) as? [[NSObject: NSObject]] {
-                    let withoutAamoji = replacements.filter({ !self._replacementBelongsToAamoji($0) })
+                    if insert {
+                        _insertReplacements()
+                    } else {
+                        _deleteReplacements()
+                    }
+                    /*let withoutAamoji = replacements.filter({ !self._replacementBelongsToAamoji($0) })
                     let newReplacements: [[NSObject: NSObject]] = insert ? (withoutAamoji + aamojiEntries()) : withoutAamoji
                     var globalDomain = _defaults.persistentDomainForName(NSGlobalDomain)!
                     globalDomain[ReplacementsKey] = newReplacements
                     _defaults.setPersistentDomain(globalDomain, forName: NSGlobalDomain)
-                    _defaults.synchronize()
+                    _defaults.synchronize()*/
                 }
             }
         }
     }
+    
+    private func _insertReplacements() {
+        // make the change in sqlite:
+        
+        // make the change in nsuserdefaults:
+        let existingReplacementEntries = _defaults.arrayForKey(ReplacementsKey) as! [[NSObject: NSObject]]
+        _setReplacementsInUserDefaults(existingReplacementEntries + aamojiEntries())
+    }
+    
+    private func _deleteReplacements() {
+        // make the change in sqlite:
+        
+        // make the change in nsuserdefaults:
+        let existingReplacementEntries = _defaults.arrayForKey(ReplacementsKey) as! [[NSObject: NSObject]]
+        let withoutAamojiEntries = existingReplacementEntries.filter({ !self._allShortcuts.contains($0[ReplacementShortcutKey] as! String) })
+        _setReplacementsInUserDefaults(withoutAamojiEntries)
+    }
+    
+    func _pathForDatabase() -> String {
+        let library = NSSearchPathForDirectoriesInDomains(.LibraryDirectory, .UserDomainMask, true).first as! String
+        let container1 = library.stringByAppendingPathComponent("Dictionaries/CoreDataUbiquitySupport")
+        let contents = NSFileManager.defaultManager().contentsOfDirectoryAtPath(container1, error: nil) as! [String]
+        let userName = NSUserName()
+        let matchingDirname = contents.filter({ $0.startsWith(userName) }).first!
+        let path = container1.stringByAppendingPathComponent(matchingDirname).stringByAppendingPathComponent("UserDictionary/local/store/UserDictionary.db")
+        return path
+    }
+    
+    private func _setReplacementsInUserDefaults(replacements: [[NSObject: NSObject]]) {
+        var globalDomain = _defaults.persistentDomainForName(NSGlobalDomain)!
+        globalDomain[ReplacementsKey] = replacements
+        _defaults.setPersistentDomain(globalDomain, forName: NSGlobalDomain)
+        _defaults.synchronize()
+    }
+    
+    private lazy var _allShortcuts: Set<String> = {
+        let entries = self.aamojiEntries()
+        return Set(entries.map({ $0[ReplacementShortcutKey] as! String }))
+    }()
     
     func aamojiEntries() -> [[NSObject: NSObject]] {
         let emojiInfoJson = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("emoji", ofType: "json")!)!
@@ -103,8 +154,4 @@ class AamojiInserter: NSObject {
     }
     
     private var _defaults = NSUserDefaults()
-    
-    private func _replacementBelongsToAamoji(replacement: [NSObject: NSObject]) -> Bool {
-        return (replacement[ReplacementAamojiMarker] as? Bool) ?? false
-    }
 }

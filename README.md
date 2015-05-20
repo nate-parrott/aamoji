@@ -1,7 +1,7 @@
 # aamoji
 ⚡ Automatically install OS X keyboard shortcuts to type emoji faster ⚡ 
 
-aa<name of emoji> 👉 <the emoji>
+aa&lt;name of emoji&gt; 👉 &lt;the emoji&gt;
 
 aasmile 👉 😄 
 
